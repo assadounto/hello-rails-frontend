@@ -10,9 +10,7 @@ export const getGreetings = createAsyncThunk(
     async()=>{
       
       console.log('response');
-        const data =await fetch('/api/v1/greetings/random').then(response => {
-       
-              //console.log(response.json())
+        const data =await fetch('http://localhost:3000/api/v1/greetings/random').then(response => {
               return response.json();
           })
          return data;
