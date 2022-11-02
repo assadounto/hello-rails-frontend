@@ -28,12 +28,13 @@ To get a local copy up and running follow these simple example steps.
 
 ## Setup
 - ```Java
-git git@github.com:assadounto/hello-rails-frontend.git```
+    git git@github.com:assadounto/hello-rails-frontend.git
+```
 -  ````cd hello-rails-frontend````
 -  ````npm install ````
 -  ````npm start ````
 
--Follow the HTML-CSS linter confuguration to docs to setup linters [Link to Microverse linter docs](https://github.com/microverseinc/linters-config)
+- Follow the HTML-CSS linter confuguration to docs to setup linters [Link to Microverse linter docs](https://github.com/microverseinc/linters-config)
 
 
 ## Run tests
