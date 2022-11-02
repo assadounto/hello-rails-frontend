@@ -1,41 +1,38 @@
-import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
-let initialState={
-  message:{}
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  message: {},
 };
 
 export const getGreetings = createAsyncThunk(
 
-    'greeting/getGreetings',
-    async()=>{
-      
-      console.log('response');
-        const data =await fetch('http://localhost:3000/api/v1/greetings/random').then(response => {
-              return response.json();
-          })
-         return data;
-    }
-)
+  'greeting/getGreetings',
+  async () => {
+    const data = await fetch('http://localhost:3000/api/v1/greetings/random').then((response) => response.json());
+    return data;
+  },
+);
 
-export const greetings=createSlice(
-    {
-      name:"greetings",
-      initialState,
-      reducers: {
-        STOREGREETING(state,action){
-          state.message=action.payload
-            
-        }
+export const greetings = createSlice(
+  {
+    name: 'greetings',
+    initialState,
+    reducers: {
+      STOREGREETING(state, action) {
+        const gstate = state;
+        gstate.message = action.payload;
       },
-      extraReducers: {
-        [getGreetings.fulfilled]: (state, action) => {
-        
-          const details = action.payload;
-          state.message=details;
-        }, 
-    }
-  });
+    },
+    extraReducers: {
+      [getGreetings.fulfilled]: (state, action) => {
+        const details = action.payload;
+        const gstate = state;
+        gstate.message = details;
+      },
+    },
+  },
+);
 
-export const {STOREGREETING}= greetings.actions;
+export const { STOREGREETING } = greetings.actions;
 
 export default greetings.reducer;
