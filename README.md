@@ -28,8 +28,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Setup
 - ```Java
-    git git@github.com:assadounto/hello-rails-frontend.git
-```
+    git git@github.com:assadounto/hello-rails-frontend.git ```
 -  ````cd hello-rails-frontend````
 -  ````npm install ````
 -  ````npm start ````
